@@ -5,20 +5,20 @@
 describe('my app', function() {
 
 
-  it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
+  it('should automatically redirect to /part1 when location hash/fragment is empty', function() {
     browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/view1");
+    expect(browser.getLocationAbsUrl()).toMatch("/part1");
   });
 
 
-  describe('view1', function() {
+  describe('part1', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/view1');
+      browser.get('index.html#/part1');
     });
 
 
-    it('should render view1 when user navigates to /view1', function() {
+    it('should render part1 when user navigates to /part1', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
         toMatch(/partial for view 1/);
     });
@@ -29,11 +29,11 @@ describe('my app', function() {
   describe('view2', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/view2');
+      browser.get('index.html#/part2');
     });
 
 
-    it('should render view2 when user navigates to /view2', function() {
+    it('should render part2 when user navigates to /part2', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
         toMatch(/partial for view 2/);
     });
