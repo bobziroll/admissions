@@ -10,9 +10,11 @@ angular.module('AdmissionsApp.part1', ['ngRoute'])
     }])
 
     .controller('Part1Ctrl', ["$scope", "$rootScope", "$location", "PasswordCheckService", "ProgressCheckService", function ($scope, $rootScope, $location, PasswordCheckService, ProgressCheckService) {
+        $scope.pass1 = "";
+
         console.error("You've found it!");
         console.info("This is the JavaScript Console. Anytime your website/application doesn't seem to be working, this is the FIRST place you need to check.");
-        console.info("Password to move on is: JavaScriptConsoleErrorsAreImportantForDebugging");
+        console.info("Password to move on to the next section is: JavaScriptConsoleErrorsAreImportantForDebugging");
 
         $scope.$on("$locationChangeStart", function (event) {
             if (ProgressCheckService.checkProgress() < 1) {

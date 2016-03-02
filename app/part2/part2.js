@@ -10,6 +10,7 @@ angular.module('AdmissionsApp.part2', ['ngRoute'])
     }])
 
     .controller('Part2Ctrl', ["$scope", "$rootScope", "$location", "PasswordCheckService", "ProgressCheckService", function ($scope, $rootScope, $location, PasswordCheckService, ProgressCheckService) {
+        $scope.pass2 = "";
 
         $scope.$on("$routeChangeStart", function (event) {
             if (ProgressCheckService.checkProgress() < 2) {

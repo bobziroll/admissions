@@ -10,6 +10,7 @@ angular.module('AdmissionsApp.part3', ['ngRoute'])
     }])
 
     .controller('Part3Ctrl', ["$scope", "$rootScope", "$location", "$http", "PasswordCheckService", "ProgressCheckService", function ($scope, $rootScope, $location, $http, PasswordCheckService, ProgressCheckService) {
+        $scope.pass3 = "";
 
         getPassword();
 

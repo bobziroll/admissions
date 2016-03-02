@@ -10,6 +10,10 @@ angular.module('AdmissionsApp.instructions', ['ngRoute'])
     }])
 
     .controller('InstructionsCtrl', ["$scope", "$location", "ProgressCheckService", function ($scope, $location, ProgressCheckService) {
+
+        $scope.name = "";
+        $scope.email = "";
+
         $scope.startProject = function () {
             $location.path("/part1");
         };

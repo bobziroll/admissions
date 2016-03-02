@@ -12,11 +12,21 @@
     <p>In part 2 of this project, we've hidden an <span class="text-success">HTML image element</span> from the viewable area of the screen.
     </p>
     <p>In order to move on, figure out how to temporarily change the CSS of that item so that it displays on the screen.</p>
-    <div class="form-group">
-        <input type="text" placeholder="Password" class="form-control" ng-model="pass2">
-        <!--<a href="#/part1"><button class="btn btn-lg btn-primary">Back</button></a>-->
-        <button class="btn btn-lg btn-success" ng-click="testPassword(pass2, '2')">Next</button>
-    </div>
+
+    <form class="password">
+        <div class="form-group">
+            <input type="text"
+                   class="form-control"
+                   placeholder="Password"
+                   ng-model="pass2">
+        </div>
+
+        <button class="btn btn-lg btn-success btn-block"
+                ng-class="{disabled: pass2.length===0}"
+                ng-click="testPassword(pass2, '2')">Next
+        </button>
+
+    </form>
 </div>
 <div class="col-md-4">
     <img src="static/img/password-photo.png" alt="password image" class="img-responsive password-photo">
