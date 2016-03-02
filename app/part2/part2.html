@@ -1,1 +1,23 @@
-<p>This is the partial for part 2.</p>
+<div class="col-md-4">
+    <instructions-recap></instructions-recap>
+</div>
+<div class="col-md-4">
+    <h3>Part 2</h3>
+    <p>Using CSS to design your site is oftentimes full of "guess-and-check" work.</p>
+    <p>Fortunately, the developer tools allow us to make changes to an element's CSS right in the browser without having to make any changes
+        to the code itself.</p>
+    <p>This way, we can test our changes and IMMEDIATELY see what they would look like.</p>
+    <p>Otherwise, you'd be making changes to the code, switching back to the browser, and refreshing the page EACH TIME you wanted to make a
+        change.</p>
+    <p>In part 2 of this project, we've hidden an <span class="text-success">HTML image element</span> from the viewable area of the screen.
+    </p>
+    <p>In order to move on, figure out how to temporarily change the CSS of that item so that it displays on the screen.</p>
+    <div class="form-group">
+        <input type="text" placeholder="Password" class="form-control" ng-model="pass2">
+        <!--<a href="#/part1"><button class="btn btn-lg btn-primary">Back</button></a>-->
+        <button class="btn btn-lg btn-success" ng-click="testPassword(pass2, '2')">Next</button>
+    </div>
+</div>
+<div class="col-md-4">
+    <img src="static/img/password-photo.png" alt="password image" class="img-responsive password-photo">
+</div>

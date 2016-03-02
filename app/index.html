@@ -1,12 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>
-<html lang="en" ng-app="AdmissionsApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>
-<html lang="en" ng-app="AdmissionsApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>
-<html lang="en" ng-app="AdmissionsApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html lang="en" ng-app="AdmissionsApp" class="no-js"> <!--<![endif]-->
+<html lang="en" ng-app="AdmissionsApp">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,22 +8,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css">
 </head>
 <body>
 <header>
     <nav class="navbar navbar-default">
         <h3 class="text-center">Admissions Project</h3>
-          <ul><li><a href="#/part2">Part 2</a></li></ul>
     </nav>
 </header>
-    <div class="container">
+<!-- The triangles pointing to the right mean you can click them to expand on more HTML -->
+    <div class="container-fluid">
         <div ng-view></div>
     </div>
+<script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/ngstorage/ngStorage.js"></script>
+<script src="bower_components/toastr/toastr.js"></script>
 <script src="app.js"></script>
+<script src="services/passwordCheckService.js"></script>
+<script src="services/progressCheckService.js"></script>
+<script src="instructions/instructionsDirective.js"></script>
 <script src="instructions/instructions.js"></script>
 <script src="part1/part1.js"></script>
 <script src="part2/part2.js"></script>
+<script src="part3/part3.js"></script>
+<script src="congrats/congrats.js"></script>
+<script src="static/js/password.js"></script>
 </body>
 </html>

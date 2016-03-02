@@ -10,6 +10,9 @@
     "angular-route": "~1.4.0",
     "angular-loader": "~1.4.0",
     "angular-mocks": "~1.4.0",
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.1",
+    "ngstorage": "^0.3.10",
+    "toastr": "^2.1.2"
   }
 }

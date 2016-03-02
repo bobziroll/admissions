@@ -1,0 +1,15 @@
+<div class="col-md-4">
+    <instructions-recap></instructions-recap>
+</div>
+<div class="col-md-4">
+    <h3>Part 3</h3>
+    <p>A common practice in web development is something called "AJAX." The TL;DR of AJAX is that it is a common way to download stuff from the internet.</p>
+    <p>Oftentimes we've written something incorrectly when we're trying to download some kind of resource from the internet in our application - maybe our CSS doesn't seem to be downloading, or some data we thought we downloaded from an API isn't showing up in our application.</p>
+    <p>Anytime you're trying to download or upload something from/to the internet (over the <span class="text-success">NETWORK</span>), it gets logged. If there is an error of some kind, it shows up in <span class="text-danger">RED</span>. You can even <span class="text-success">preview</span> the error response that the server sent back, which prove very beneficial</p>
+    <p>We've forced an AJAX call to be made and told the server to fail it. If you find a way to preview the response from the server, you'll find the password to the next section.</p>
+
+    <div class="form-group">
+        <input type="text" placeholder="Password" class="form-control" ng-model="pass3">
+        <button class="btn btn-lg btn-success" ng-click="testPassword(pass3, '3')">Next</button>
+    </div>
+</div>

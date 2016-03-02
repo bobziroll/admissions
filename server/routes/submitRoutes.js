@@ -7,7 +7,7 @@ submitRouter.post("/:partNumber", function (req, res) {
     if (req.body.answer === answers[req.params.partNumber.toString()]) {
         var newPart = Number(req.params.partNumber) + 1;
         console.log("part" + newPart.toString());
-        res.send({correct: true, next: "part" + newPart.toString()});
+        res.send({correct: true, nextUrl: "/part" + newPart.toString()});
     } else {
         res.send({correct: false});
     }

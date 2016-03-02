@@ -1,6 +1,6 @@
 module.exports = {
-    1: "devToolsAreDaBess",
-    2: "JavaScriptConsoleErrorsAreImportantForDebugging",
-    3: "YouShouldEditCSSInTheDevToolsFirstToMakeSureItLooksRight",
-    4: "CheckTheNetworkTabAnytimeYouMakeACallOutToTheInternet"
+    1: "JavaScriptConsoleErrorsAreImportantForDebugging",
+    2: "editcssindevtoolsfirst!",
+    3: "CheckTheNetworkTabAnytimeYouMakeACallOutToTheInternet"
+    //4: "CheckTheNetworkTabForAnyHTTPRequests"
 };

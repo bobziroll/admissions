@@ -4,6 +4,7 @@ var morgan = require("morgan");
 var cors = require("cors");
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
+var answers = require("./answers");
 
 var port = process.env.PORT || 8001;
 
@@ -14,8 +15,8 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get("/", function (req, res) {
-    res.send("It's working!");
+app.get("/getPassword", function (req, res) {
+    res.status(400).send({password: answers["3"]});
 });
 
 app.use("/part", require("./routes/submitRoutes"));
