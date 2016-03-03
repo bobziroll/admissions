@@ -22,9 +22,9 @@ angular.module('AdmissionsApp.instructions', ['ngRoute'])
             if ($location.path() !== "/part1") {
                 toastr.error("Please fill out your information and click the \"Let's get started\" below to begin.");
                 event.preventDefault();
-            } else if ($scope.name.length === 0 || $scope.email.length === 0) {
+            } /*else if ($scope.name.length === 0 || $scope.email.length === 0) {
                 toastr.error("Please fill out your information and click the \"Let's get started\" below to begin.");
                 event.preventDefault();
-            }
+            }*/
         });
     }]);
