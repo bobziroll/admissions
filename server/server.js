@@ -15,7 +15,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get("/getPassword", function (req, res) {
+app.get("/api/getPassword", function (req, res) {
     res.status(400).set("Password", answers["3"]).send();
 });
 
