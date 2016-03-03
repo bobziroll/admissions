@@ -9,10 +9,10 @@ angular.module('AdmissionsApp.part3', ['ngRoute'])
         });
     }])
 
-    .controller('Part3Ctrl', ["$scope", "$location", "PasswordCheckService", "ProgressCheckService", function ($scope, $location, PasswordCheckService, ProgressCheckService) {
+    .controller('Part3Ctrl', ["$scope", "$location", "$http", "PasswordCheckService", "ProgressCheckService", function ($scope, $location, $http, PasswordCheckService, ProgressCheckService) {
         $scope.pass3 = "";
 
-        getPassword();
+        $http.get("http://admissions-staging.vschool.io/getPassword");
 
         //$rootScope.$on("$routeChangeStart", function (event) {
         //    if (ProgressCheckService.checkProgress() < 3) {
