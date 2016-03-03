@@ -9,7 +9,7 @@ angular.module('AdmissionsApp.part2', ['ngRoute'])
         });
     }])
 
-    .controller('Part2Ctrl', ["$scope", "$rootScope", "$location", "PasswordCheckService", "ProgressCheckService", function ($scope, $rootScope, $location, PasswordCheckService, ProgressCheckService) {
+    .controller('Part2Ctrl', ["$scope", "$location", "PasswordCheckService", "ProgressCheckService", function ($scope, $location, PasswordCheckService, ProgressCheckService) {
         $scope.pass2 = "";
 
         $scope.$on("$routeChangeStart", function (event) {

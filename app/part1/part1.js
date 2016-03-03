@@ -9,7 +9,7 @@ angular.module('AdmissionsApp.part1', ['ngRoute'])
         });
     }])
 
-    .controller('Part1Ctrl', ["$scope", "$rootScope", "$location", "PasswordCheckService", "ProgressCheckService", function ($scope, $rootScope, $location, PasswordCheckService, ProgressCheckService) {
+    .controller('Part1Ctrl', ["$scope", "$location", "PasswordCheckService", "ProgressCheckService", function ($scope, $location, PasswordCheckService, ProgressCheckService) {
         $scope.pass1 = "";
 
         console.error("You've found it!");
