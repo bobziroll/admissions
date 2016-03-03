@@ -19,7 +19,7 @@ app.get("/getPassword", function (req, res) {
     res.status(400).send({password: answers["3"]});
 });
 
-app.use("/part", require("./routes/submitRoutes"));
+app.use("/api/part", require("./routes/submitRoutes"));
 
 app.listen(port, function () {
     console.log("Server listening on port " + port);
