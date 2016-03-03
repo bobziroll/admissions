@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/getPassword", function (req, res) {
-    res.status(400).send({password: answers["3"]});
+    res.status(400).set("Password", answers["3"]).send();
 });
 
 app.use("/part", require("./routes/submitRoutes"));
