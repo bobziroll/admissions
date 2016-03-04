@@ -14,11 +14,17 @@ var applicantSchema = new Schema({
     timeTaken: {
         type: String,
         default: "Not yet completed"
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
     }
-}, {timestamps: true});
+});
 
 applicantSchema.pre("save", function (next) {
-    this.setTimeTaken();
+    if (!this.isNew) {
+        this.setTimeTaken();
+    }
     next();
 });
 
