@@ -8,7 +8,7 @@ applicantRouter.post("/", function (req, res) {
         if (err) {
             res.status(500).send(err)
         } else {
-            res.send({success: true, applicantInfo: newObj})
+            res.send(newObj)
         }
     });
 });
@@ -19,7 +19,8 @@ applicantRouter.put("/:applicantId", function (req, res) {
             if (err) {
                 res.status(500).send(err)
             } else {
-                res.send({success: true, timeTaken: applicant.timeTaken})
+                console.log(applicant.timeTaken);
+                res.send({success: true})
             }
         });
     });

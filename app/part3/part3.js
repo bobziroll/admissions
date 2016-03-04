@@ -9,7 +9,7 @@ angular.module('AdmissionsApp.part3', ['ngRoute'])
         });
     }])
 
-    .controller('Part3Ctrl', ["$scope", "$location", "HttpService", "ProgressCheckService", function ($scope, $location, HttpService, ProgressCheckService) {
+    .controller('Part3Ctrl', ["$scope", "$location", "HttpService", "ProgressCheckService", "ApplicantService", function ($scope, $location, HttpService, ProgressCheckService, ApplicantService) {
         $scope.pass3 = "";
 
         HttpService.get("/getPassword");
@@ -19,8 +19,11 @@ angular.module('AdmissionsApp.part3', ['ngRoute'])
                 .then(function (response) {
                     if (response.correct) {
                         ProgressCheckService.updateProgress(3);
-                        toastr.success("Good job!");
-                        $location.path("/congrats");
+                        ApplicantService.finish()
+                            .then(function () {
+                                toastr.success("Good job!");
+                                $location.path("/congrats");
+                            });
                     } else {
                         toastr.error("That's not the correct password.", "Keep trying!");
                     }
