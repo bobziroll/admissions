@@ -11,7 +11,10 @@ var applicantSchema = new Schema({
         required: true,
         lowercase: true
     },
-    timeTaken: String
+    timeTaken: {
+        type: String,
+        default: "Not yet completed"
+    }
 }, {timestamps: true});
 
 applicantSchema.pre("save", function (next) {
