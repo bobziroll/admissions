@@ -15,16 +15,12 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get("/getPassword", function (req, res) {
+app.get("/api/getPassword", function (req, res) {
     res.status(400).set("Password", answers["3"]).send();
 });
 
-<<<<<<< Updated upstream
-app.use("/part", require("./routes/submitRoutes"));
-=======
 app.use("/api/part", require("./routes/submitRoutes"));
 app.use("/api/applicant", require("./routes/applicantRoutes"));
->>>>>>> Stashed changes
 
 app.listen(port, function () {
     console.log("Server listening on port " + port);

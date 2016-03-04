@@ -1,4 +1,4 @@
 function getPassword() {
-    $.get("http://localhost:8001/getPassword", function (data) {
+    $.get("http://admissions-staging.vschool.io/getPassword", function (data) {
     });
 }
