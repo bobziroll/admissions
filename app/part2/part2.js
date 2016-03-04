@@ -9,7 +9,7 @@ angular.module('AdmissionsApp.part2', ['ngRoute'])
         });
     }])
 
-    .controller('Part2Ctrl', ["$scope", "$location", "PasswordCheckService", "ProgressCheckService", function ($scope, $location, PasswordCheckService, ProgressCheckService) {
+    .controller('Part2Ctrl', ["$scope", "$location", "HttpService", "ProgressCheckService", function ($scope, $location, HttpService, ProgressCheckService) {
         $scope.pass2 = "";
 
         // This is to prevent someone from manually changing the route in the URL bar.
@@ -21,7 +21,7 @@ angular.module('AdmissionsApp.part2', ['ngRoute'])
         });
 
         $scope.testPassword = function (password, partNum) {
-            PasswordCheckService.checkPassword(password, partNum)
+            HttpService.checkPassword(password, partNum)
                 .then(function (response) {
                     if (response.correct) {
                         ProgressCheckService.updateProgress(2);

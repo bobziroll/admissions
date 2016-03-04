@@ -15,6 +15,10 @@ angular.module('AdmissionsApp.instructions', ['ngRoute'])
         $scope.email = "";
 
         $scope.startProject = function () {
+            // Call to server to create new user.
+            // Server returns the applicant's info - save this to sessionStorage
+            // (Need the ID as a routeparam to update the user and calculate how long it took them to finish)
+
             $location.path("/part1");
         };
 

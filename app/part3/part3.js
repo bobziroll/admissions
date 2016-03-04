@@ -9,21 +9,13 @@ angular.module('AdmissionsApp.part3', ['ngRoute'])
         });
     }])
 
-    .controller('Part3Ctrl', ["$scope", "$location", "$http", "PasswordCheckService", "ProgressCheckService", function ($scope, $location, $http, PasswordCheckService, ProgressCheckService) {
+    .controller('Part3Ctrl', ["$scope", "$location", "HttpService", "ProgressCheckService", function ($scope, $location, HttpService, ProgressCheckService) {
         $scope.pass3 = "";
 
-        $http.get("http://localhost:8001/api/getPassword");
-
-        // //This is to prevent someone from manually changing the route in the URL bar.
-        //$rootScope.$on("$routeChangeStart", function (event) {
-        //    if (ProgressCheckService.checkProgress() < 3) {
-        //        toastr.error("You need to provide the correct password before moving on.", "Nice try!");
-        //        event.preventDefault();
-        //    }
-        //});
+        HttpService.get("/getPassword");
 
         $scope.testPassword = function (password, partNum) {
-            PasswordCheckService.checkPassword(password, partNum)
+            HttpService.checkPassword(password, partNum)
                 .then(function (response) {
                     if (response.correct) {
                         ProgressCheckService.updateProgress(3);

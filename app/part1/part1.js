@@ -9,7 +9,7 @@ angular.module('AdmissionsApp.part1', ['ngRoute'])
         });
     }])
 
-    .controller('Part1Ctrl', ["$scope", "$location", "PasswordCheckService", "ProgressCheckService", function ($scope, $location, PasswordCheckService, ProgressCheckService) {
+    .controller('Part1Ctrl', ["$scope", "$location", "HttpService", "ProgressCheckService", function ($scope, $location, HttpService, ProgressCheckService) {
         $scope.pass1 = "";
 
         console.error("You've found it!");
@@ -25,7 +25,7 @@ angular.module('AdmissionsApp.part1', ['ngRoute'])
         });
 
         $scope.testPassword = function (password, partNum) {
-            PasswordCheckService.checkPassword(password, partNum)
+            HttpService.checkPassword(password, partNum)
                 .then(function (response) {
                     if (response.correct) {
                         ProgressCheckService.updateProgress(1);
