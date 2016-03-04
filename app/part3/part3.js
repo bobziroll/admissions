@@ -12,7 +12,7 @@ angular.module('AdmissionsApp.part3', ['ngRoute'])
     .controller('Part3Ctrl', ["$scope", "$location", "$http", "PasswordCheckService", "ProgressCheckService", function ($scope, $location, $http, PasswordCheckService, ProgressCheckService) {
         $scope.pass3 = "";
 
-        $http.get("http://admissions-staging.vschool.io/api/getPassword");
+        $http.get("http://localhost:8001/api/getPassword");
 
         // //This is to prevent someone from manually changing the route in the URL bar.
         //$rootScope.$on("$routeChangeStart", function (event) {

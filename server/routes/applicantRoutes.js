@@ -15,15 +15,12 @@ applicantRouter.post("/", function (req, res) {
 
 applicantRouter.put("/:applicantId", function (req, res) {
     Applicant.findById(req.params.applicantId, function (err, applicant) {
-        applicant.save().then(function () {
-            applicant.save(function (err, applicant) {
-                //console.log(applicant.timeTaken);
-                if (err) {
-                    res.status(500).send(err)
-                } else {
-                    res.send({success: true, timeTaken: applicant.timeTaken})
-                }
-            });
+        applicant.save(function (err, applicant) {
+            if (err) {
+                res.status(500).send(err)
+            } else {
+                res.send({success: true, timeTaken: applicant.timeTaken})
+            }
         });
     });
 });

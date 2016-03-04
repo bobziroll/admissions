@@ -14,13 +14,14 @@ var applicantSchema = new Schema({
     timeTaken: String
 }, {timestamps: true});
 
-applicantSchema.post("save", function () {
+applicantSchema.pre("save", function (next) {
     this.setTimeTaken();
+    next();
 });
 
 applicantSchema.methods.setTimeTaken = function () {
     var applicant = this;
-    var ms = this.updatedAt - this.createdAt;
+    var ms = Date.now() - this.createdAt;
     var x = ms / 1000;
     var seconds = Math.floor(x % 60);
     x /= 60;
