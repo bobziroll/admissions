@@ -1,7 +1,7 @@
 var app = angular.module("AdmissionsApp");
 
 app.service("HttpService", ["$http", function ($http) {
-    var baseUrl = "http://localhost:8001/api";
+    var baseUrl = "http://admissions.vschool.io/api";
 
     this.checkPassword = function (password, partNumber) {
         var submitData = {answer: password};
