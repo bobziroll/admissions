@@ -9,17 +9,20 @@ angular.module('AdmissionsApp.instructions', ['ngRoute'])
         });
     }])
 
-    .controller('InstructionsCtrl', ["$scope", "$location", "ProgressCheckService", function ($scope, $location, ProgressCheckService) {
+    .controller('InstructionsCtrl', ["$scope", "$location", "ApplicantService", "ProgressCheckService", function ($scope, $location, ApplicantService, ProgressCheckService) {
 
-        $scope.name = "";
-        $scope.email = "";
+        $scope.applicant = {
+            name: "",
+            email: ""
+        };
 
         $scope.startProject = function () {
-            // Call to server to create new user.
-            // Server returns the applicant's info - save this to sessionStorage
-            // (Need the ID as a routeparam to update the user and calculate how long it took them to finish)
+            ApplicantService.register($scope.applicant)
+                .then(function () {
+                    $location.path("/part1");
+                });
+            // TODO: Add some kind of error handling here, in case there's an error, so the user is informed
 
-            $location.path("/part1");
         };
 
         // This is to prevent someone from manually changing the route in the URL bar.
@@ -27,9 +30,10 @@ angular.module('AdmissionsApp.instructions', ['ngRoute'])
             if ($location.path() !== "/part1") {
                 toastr.error("Please fill out your information and click the \"Let's get started\" below to begin.");
                 event.preventDefault();
-            } /*else if ($scope.name.length === 0 || $scope.email.length === 0) {
-                toastr.error("Please fill out your information and click the \"Let's get started\" below to begin.");
-                event.preventDefault();
-            }*/
+            }
+            /*else if ($scope.name.length === 0 || $scope.email.length === 0) {
+             toastr.error("Please fill out your information and click the \"Let's get started\" below to begin.");
+             event.preventDefault();
+             }*/
         });
     }]);
