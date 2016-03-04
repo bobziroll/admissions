@@ -12,6 +12,7 @@ angular.module('AdmissionsApp.part2', ['ngRoute'])
     .controller('Part2Ctrl', ["$scope", "$location", "PasswordCheckService", "ProgressCheckService", function ($scope, $location, PasswordCheckService, ProgressCheckService) {
         $scope.pass2 = "";
 
+        // This is to prevent someone from manually changing the route in the URL bar.
         $scope.$on("$routeChangeStart", function (event) {
             if (ProgressCheckService.checkProgress() < 2) {
                 toastr.error("You need to provide the correct password before moving on.", "Nice try!");

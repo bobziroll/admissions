@@ -14,6 +14,7 @@ angular.module('AdmissionsApp.part3', ['ngRoute'])
 
         getPassword();
 
+        // //This is to prevent someone from manually changing the route in the URL bar.
         //$rootScope.$on("$routeChangeStart", function (event) {
         //    if (ProgressCheckService.checkProgress() < 3) {
         //        toastr.error("You need to provide the correct password before moving on.", "Nice try!");

@@ -18,6 +18,7 @@ angular.module('AdmissionsApp.instructions', ['ngRoute'])
             $location.path("/part1");
         };
 
+        // This is to prevent someone from manually changing the route in the URL bar.
         $scope.$on("$locationChangeStart", function (event) {
             if ($location.path() !== "/part1") {
                 toastr.error("Please fill out your information and click the \"Let's get started\" below to begin.");
