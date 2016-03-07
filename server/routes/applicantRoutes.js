@@ -8,13 +8,11 @@ var nodemailer = require("nodemailer");
 var transporter = nodemailer.createTransport('smtps://bobziroll%40gmail.com:pass@smtp.gmail.com');
 
 applicantRouter.post("/", function (req, res) {
-    console.log("Trying to register a new person...");
     var newApplicant = new Applicant(req.body);
     newApplicant.save(function (err, newObj) {
         if (err) {
             res.status(500).send(err)
         } else {
-            console.log("New person registered!");
             res.send(newObj)
         }
     });
