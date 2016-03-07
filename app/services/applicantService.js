@@ -1,7 +1,7 @@
 var app = angular.module("AdmissionsApp");
 
 app.service("ApplicantService", ["$http", "$sessionStorage", function ($http, $sessionStorage) {
-    var baseUrl = "http://localhost:8001/api/applicant";
+    var baseUrl = "http://admissions-staging.vschool.io/api/applicant";
 
     this.register = function (applicantInfo) {
         return $http.post(baseUrl, applicantInfo)
