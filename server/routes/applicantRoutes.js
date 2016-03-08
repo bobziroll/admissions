@@ -1,11 +1,7 @@
 var express = require("express");
 var applicantRouter = express.Router();
 var Applicant = require("../models/applicant");
-var nodemailer = require("nodemailer");
-
-// nodemailer setup
-// create reusable transporter object using the default SMTP transport
-var transporter = nodemailer.createTransport('smtps://bobziroll%40gmail.com:pass@smtp.gmail.com');
+var sendGridEmailer = require("../utils/emailer");
 
 applicantRouter.post("/", function (req, res) {
     var newApplicant = new Applicant(req.body);
@@ -24,7 +20,7 @@ applicantRouter.put("/:applicantId", function (req, res) {
             if (err) {
                 res.status(500).send(err)
             } else {
-                console.log(applicant.timeTaken);
+                sendGridEmailer(applicant.email);
                 res.send({success: true})
             }
         });

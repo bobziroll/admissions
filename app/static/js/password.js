@@ -1,4 +1,3 @@
 function getPassword() {
-    $.get("http://admissions-staging.vschool.io/getPassword", function (data) {
-    });
+    console.log("Your password is 'HelloWorld!'");
 }
