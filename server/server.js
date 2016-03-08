@@ -22,6 +22,8 @@ app.get("/api/getPassword", function (req, res) {
 app.use("/api/part", require("./routes/submitRoutes"));
 app.use("/api/applicant", require("./routes/applicantRoutes"));
 
+// TODO: Write unit tests for this app, frontend and backend
+
 app.listen(port, function () {
     console.log("Server listening on port " + port);
 });
